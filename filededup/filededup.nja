@@ -1,0 +1,6 @@
+{
+  "venv": "", 
+  "name": "filededup", 
+  "license": "GNU General Public License v3", 
+  "description": "Looks for duplicate files in directories"
+}
