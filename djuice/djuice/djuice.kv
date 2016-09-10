@@ -1,0 +1,63 @@
+#: kivy 1.9.0
+
+ScreenManagement:
+    MainScreen
+    BaseScreen
+    TestScreen2
+    TestScreen3
+
+<MainScreen@Screen>:
+    name: 'main'
+
+    GridLayout:
+        cols: 2
+        spacing: 5
+        padding: 5
+
+        Button:
+            text: 'BaseScreen'
+            background_color: 1, 0, 0, 1
+            on_release: app.root.current = 'base'
+        Button:
+            text: 'Test2'
+            background_color: 1, 1, 0, 1
+            on_release: app.root.current = 'test2'
+        Button:
+            text: 'Test3'
+            background_color: 1, 0, 1, 1
+            on_release: app.root.current = 'test3'
+        Button:
+            text: 'Test4'
+            background_color: 0, 1, 0, 1
+            on_release: app.root.current = 'main'
+
+<BaseScreen>:
+    name: 'base'
+
+    BaseIngredient:
+
+<TestScreen2>:
+    name: 'test2'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Screen #2"
+
+        Button:
+            on_release: app.root.current = "test3"
+            text: "Next Screen"
+
+<TestScreen3>:
+    name: 'test3'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Screen #3"
+
+        Button:
+            on_release: app.root.current = "base"
+            text: "Next Screen"

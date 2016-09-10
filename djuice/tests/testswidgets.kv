@@ -1,0 +1,53 @@
+build1 = '''
+BoxLayout:
+    orientation: 'horizontal'
+
+    size_hint: 1, .2
+    padding: 3
+    spacing: 3
+    Label:
+        text: 'Target VG/PG:'
+        font_size: '26dp'
+        size_hint_x: 1
+    Label:
+        text: "{} / {}".format(slider1.value, (100 - slider1.value))
+        font_size: '26dp'
+        size_hint_x: 1
+    Slider:
+        id: slider1
+        orientation: 'horizontal'
+        min: 0
+        max: 100
+        step: 1
+        value_track: True
+        value_track_color: 0, 1, 1, 1
+        size_hint_x: 3
+'''
+build2 = """
+BoxLayout:
+    orientation: 'horizontal'
+    size_hint: 1, .2
+    Label:
+        text: 'Nicotine Base VG/PG: '
+        size_hint_x: 1.5
+        font_size: '26dp'
+    CheckBox:
+        group: 'base1'
+        size_hint_x: .2
+    Label:
+        text: 'Max VG'
+        size_hint_x: .3
+    CheckBox:
+        group: 'base1'
+        size_hint_x: .2
+    Label:
+        text: '50/50'
+        size_hint_x: .3
+    CheckBox:
+        group: 'base1'
+        size_hint_x: .2
+    Label:
+        text: 'Max PG'
+        size_hint_x: .3
+
+"""

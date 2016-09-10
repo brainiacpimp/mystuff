@@ -1,0 +1,264 @@
+#:kivy 1.9.0
+
+<NicInput>:
+    orientation: 'vertical'
+
+    size_hint: 1, .35
+    pos_hint: {self.x: 10, self.y: 10}
+    spacing: 2
+
+    canvas.before:
+        Color:
+            rgba: 0, 1, .5, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Label:
+        text: "[b][i][color=000000]Nictoine[/b][/i][/color]"
+        halign: 'center'
+        valign: 'bottom'
+        size_hint: 1, .1
+        spacing: 2
+
+        markup: True
+
+    GridLayout:
+        cols: 4
+        padding: 2
+
+        Label:
+            text: '[b][color=000000]Undiluted Nicotine Strength:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _undiluted_nic_str
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]mg/mL:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _undiluted_nic_str.text = ''
+        Label:
+            text: '[b][color=000000]Undiluted Nicotine VG Ratio:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _undiluted_nic_vg
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]%:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _undiluted_nic_vg.text = ''
+        Label:
+            text: '[b][color=000000]Undiluted Nicotine PG Ratio:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _undiluted_nic_pg
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]%:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _undiluted_nic_pg.text = ''
+
+<BaseInput>:
+    orientation: 'vertical'
+    spacing: 2
+    size_hint: 1, .50
+
+    canvas.before:
+        Color:
+            rgba: 0, 1, .5, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Label:
+        text: "[b][i][color=000000]Targets[/b][/i][/color]"
+        halign: 'center'
+        valign: 'bottom'
+        size_hint: 1, .1
+
+        markup: True
+
+    GridLayout:
+        cols: 4
+        padding: 2
+
+        Label:
+            text: '[b][color=000000]Target Volume:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _target_volume
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]mL[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _target_volume.text = ''
+        Label:
+            text: '[b][color=000000]Target Nicotine Strength:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _target_nic_str
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]mg/mL[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _target_nic_str.text = ''
+        Label:
+            text: '[b][color=000000]Target VG Ratio:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _target_vg
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]%[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _target_vg.text = ''
+        Label:
+            text: '[b][color=000000]Target PG Ratio:[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'left'
+            size_hint: .4, .2
+        FloatInput:
+            id: _target_pg
+            multiline: False
+            background_color: .2, .6, .9, 1
+            foreground_color: .0, .0, .1, 1
+            size_hint: .2, .2
+        Label:
+            text: '[b][color=000000]%[/color][/b]'
+            markup: True
+            font_size: '15dp'
+            text_size: self.size
+            halign: 'center'
+            size_hint: .1, .2
+        ClearButton:
+            size_hint: .3, .2
+            on_release: _target_pg.text = ''
+
+<ButtonBox@BoxLayout>:
+    orientation: 'horizontal'
+    padding: 5
+    canvas.before:
+        Color:
+            rgba: 0, 1, .5, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Previous Screen"
+        size_hint: 1., .2
+        on_release: app.root.current = 'test3'
+    Button:
+        text: "Menu Screen"
+        size_hint: 1., .2
+        on_release: app.root.current = 'main'
+    Button:
+        text: "Next Screen"
+        size_hint: 1., .2
+        on_release: app.root.current = 'test2'
+
+<BaseIngredient>:
+    orientation: 'vertical'
+    spacing: 5
+    canvas.before:
+        Color:
+            rgba: 0, 1, .5, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Label:
+
+        canvas.before:
+            Color:
+                rgba: .0, 1., .5, 1.
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        text: "[b][i][color=000000]Base Ingredients[/color][/i][/b]"
+        size_hint: 1., .05
+        halign: 'center'
+        markup: True
+        font_size: '20dp'
+    NicInput:
+    BaseInput:
+    ButtonBox:

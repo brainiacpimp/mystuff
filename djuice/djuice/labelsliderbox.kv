@@ -1,0 +1,72 @@
+#: kivy 1.9.0
+
+
+LabelSliderBox:
+
+<LabelSliderBox>:
+    orientation: 'vertical'
+    VolumeSliderBox:
+    NicotineSliderBox:
+    BaseSliderBox:
+
+<VolumeSliderBox>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, .5
+        Label:
+            text: 'Target Volume: '
+            size_hint: .7, 1
+        Label:
+            text: '{}'.format(vol_slider.value)
+            size_hint: .2, 1
+        Label:
+            text: 'mL'
+            size_hint: .1, 1
+    Slider:
+        id: vol_slider
+        orientation: 'horizontal'
+        size_hint: 1, .5
+        range: (0, 1000)
+
+<NicotineSliderBox>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, .5
+        Label:
+            text: 'Target Nicotine: '
+            size_hint: .7, 1
+        Label:
+            text: '{}'.format(nic_slider.value)
+            size_hint: .2, 1
+        Label:
+            text: 'mg/mL'
+            size_hint: .1, 1
+    Slider:
+        id: nic_slider
+        orientation: 'horizontal'
+        size_hint: 1, .5
+        range: (0, 24)
+
+<BaseSliderBox>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, .5
+        Label:
+            text: 'Target VG/PG: '
+            size_hint: .7, 1
+        Label:
+            text: '{} / {}'.format((100-base_slider.value), base_slider.value)
+            size_hint: .2, 1
+        Label:
+            text: 'mL'
+            size_hint: .1, 1
+    Slider:
+        id: base_slider
+        orientation: 'horizontal'
+        size_hint: 1, .5
+        range: (0, 100)
+
+
